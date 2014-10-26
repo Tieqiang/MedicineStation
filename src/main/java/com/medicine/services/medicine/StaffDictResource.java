@@ -3,6 +3,9 @@ package com.medicine.services.medicine;
 import com.google.inject.Inject;
 import com.medicine.facade.medicine.StaffDictFacade;
 import com.medicine.models.entity.StaffDict;
+import com.medicine.models.vo.StaffDictVO;
+import com.sun.jersey.json.impl.JSONHelper;
+import org.codehaus.jettison.json.JSONArray;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -31,10 +34,11 @@ public class StaffDictResource {
 
     @POST
     @Path("/add")
-    public StaffDict addStaffDict(@FormParam("name") String name,@FormParam("emp") String emp){
+    @Consumes(MediaType.APPLICATION_JSON)
+    public StaffDict addStaffDict(StaffDictVO staffDictVO){
         StaffDict staffDict = new StaffDict();
-        staffDict.setEmpNo(emp);
-        staffDict.setName(name);
+        staffDict.setEmpNo(staffDictVO.getEmp());
+        staffDict.setName(staffDictVO.getName());
         return staffDict;
     }
 }
