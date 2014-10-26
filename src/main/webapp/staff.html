@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html data-ng-app="staffApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.css"/>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body data-ng-controller="staffCtrl">
+<form>
+    <input type="text" data-ng-model="emp">
+    <input type="text" data-ng-model="name">
+    <button type="button" data-ng-click="save()">提交</button>
+</form>
+<div class="row">
+    <div class="panel">
+        <div class="panel-header">
+            <p>医生列表</p>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <tr><td>科室代码</td><td>医生</td></tr>
+                <tr  ng-repeat="staff in staffS">
+                    <td>{{staff.deptCode}}</td>
+                    <td>{{staff.name}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/angular.js"></script>
+<script src="assets/js/angular-cookies.js"></script>
+<script src="assets/js/ui-bootstrap-tpls.js"></script>
+<script src="js/wiki-common.js"></script>
+<script src="js/wiki-index.js"></script>
+<script src="js/staff/staff.js"></script>
+</body>
+</html>

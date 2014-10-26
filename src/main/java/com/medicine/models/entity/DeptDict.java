@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 /**
  * Created by heren on 2014/10/13.
@@ -14,7 +15,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name="dept_dict")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.PROPERTY)
-public class DeptDict {
+public class DeptDict implements Serializable {
 
     @Id
     @Column(name = "DEPT_CODE", length = 20)

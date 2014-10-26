@@ -8,6 +8,7 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <!-- 用户 -->
         <class>com.medicine.models.entity.DeptDict</class>
+        <class>com.medicine.models.entity.StaffDict</class>
 
         <!--<class>com.wiki.models.data.structure.DataStructureNode</class>-->
         <!--<class>com.wiki.models.data.structure.TableStructure</class>-->
@@ -33,9 +34,9 @@
              <!--Database Driver —— Oracle -->
             <property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver"/>
              <!--Database Connection URL -->
-            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@192.168.0.143:1521:orcl"/>
-            <property name="hibernate.connection.username" value="cayy"/>
-            <property name="hibernate.connection.password" value="123"/>
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl"/>
+            <property name="hibernate.connection.username" value="system"/>
+            <property name="hibernate.connection.password" value="oracle"/>
             <!--
              其实这个hibernate.hbm2ddl.auto参数的作用主要用于：自动创建|更新|验证数据库表结构。如果不是此方面的需求建议set value="none"。
                 create：
