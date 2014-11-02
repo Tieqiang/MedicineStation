@@ -6,8 +6,8 @@ apply plugin: 'war'
 
 buildscript {
     repositories {
-        maven { url "http://localhost:8081/nexus/content/groups/public/" }
         mavenLocal()
+        maven { url "http://maven.oschina.net/content/groups/public/" }
         mavenCentral()
     }
     dependencies {
@@ -19,7 +19,7 @@ sourceCompatibility = '1.7'
 
 repositories {
     mavenLocal()
-    maven { url "http://localhost:8081/nexus/content/groups/public/" }
+    maven { url "http://maven.oschina.net/content/groups/public/" }
     mavenCentral()
     mavenCentral();
 }
@@ -45,12 +45,9 @@ dependencies {
     compile "com.sun.jersey:jersey-servlet:1.17"
     compile "com.sun.jersey:jersey-json:1.17"
     compile "com.sun.jersey.contribs:jersey-guice:1.17"
-    
     //Junit
     testCompile "junit:junit:4.10"
     
-    //MySQL
-    compile "mysql:mysql-connector-java:5.1.30"
 
     //Oracle
     compile "com.oracle:ojdbc6:11.2.0.1.0"
@@ -81,15 +78,15 @@ sourceSets {
 }
 
 fatJar {
-    baseName = 'herenWiki'
+    baseName = 'Medicine'
     manifest {
-        attributes 'Main-Class': 'com.wiki.Main'
+        attributes 'Main-Class': 'com.medicine.Main'
     }
     exclude 'META-INF/MANIFEST.MF', '**/*.RSA', '**/*.SF', '**/*.DSA'
 }
 
 war {
-    baseName = "heren-wiki"
+    baseName = "Medicine"
 }
 
 
