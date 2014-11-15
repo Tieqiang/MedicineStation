@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>药师工作站</title>
+    <!--加载各种样式-->
+    <link rel="stylesheet" href="assets/bootstrap-3.0.0/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/bootstrap-3.0.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="assets/css/ng-grid.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+</head>
+<body>
+<div ui-view="nav" class="container">导航栏</div>
+<div ui-view="main" class="container">主题区域</div>
+
+<!--加载各种js框架-->
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script src="assets/js/angular.js"></script>
+<script src="assets/js/ng-grid.js"></script>
+<script src="assets/js/angular-ui-router.js"></script>
+<script src="assets/bootstrap-3.0.0/js/bootstrap.js"></script>
+
+<!--加载业务ＪＳ-->
+<script src="js/main/main-app.js"></script>
+</body>
+</html>
