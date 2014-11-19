@@ -48,16 +48,16 @@ public class Main {
         flyway.setDataSource("jdbc:oracle:thin:@127.0.0.1:1521:orcl","system","oracle");
 
         //设置schema用户
-        flyway.setSchemas("MEDS");
+        flyway.setSchemas("phar");
         flyway.setTable("SCHEMA_VERSION");
         flyway.setEncoding("UTF-8");
         flyway.setValidateOnMigrate(true);
 
         //清空所有表结构
-        //flyway.clean();
+        flyway.clean();
         //初始化flyWAy
         //flyway.init();
         //执行版本控制
-        flyway.migrate();
+        //flyway.migrate();
     }
 }

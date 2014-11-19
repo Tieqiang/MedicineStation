@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="panel panel-default panel-primary" ng-controller="consultCtrl">
+    <div class="panel-heading"><span class="panel-title">会诊列表</span></div>
+    <div class="panel-body">
+        <!--<table class="table table-bordered table-hover">-->
+        <!--<th>病人姓名</th><th>申请日期</th><th>申请科室</th><th>申请医生</th><th>会诊医生</th>-->
+        <!--<tr ng-repeat="con in consultes" ng-click="selectConsult(con)">-->
+        <!--<td>{{con.patName}}</td>-->
+        <!--<td>{{con.applyDate | date}}</td>-->
+        <!--<td>{{con.applyDeptName}}</td>-->
+        <!--<td>{{con.consultDoctorName}}</td>-->
+        <!--<td>{{con.doctorName}}</td>-->
+        <!--</tr>-->
+        <!--</table>-->
+        <div ng-grid="patListOptions" class="gridStyle"></div>
+    </div>
+</div>
