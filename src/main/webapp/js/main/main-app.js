@@ -21,6 +21,7 @@ mainApp.config(["$stateProvider","$urlRouterProvider",function($stateProvider,$u
             }
         }
     }).state("main.pat",{
+        url:'/pat',
         views:{
             'main@':{
                 templateUrl:'partials/patient/pat-main.html'
@@ -52,5 +53,5 @@ mainApp.config(["$stateProvider","$urlRouterProvider",function($stateProvider,$u
             }
         }
     }) ;
-    $urlRouterProvider.otherwise("/consult");
+    $urlRouterProvider.otherwise("/pat");
 }]) ;
