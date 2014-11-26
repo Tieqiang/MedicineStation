@@ -52,6 +52,13 @@ mainApp.config(["$stateProvider","$urlRouterProvider",function($stateProvider,$u
                 templateUrl:'partials/phar-consult/consult-right.html'
             }
         }
+    }).state("main.patIndex",{
+        url:'/patindex',
+        views:{
+            'main@':{
+                templateUrl:"partials/pat-index/pat-index.html"
+            }
+        }
     }) ;
     $urlRouterProvider.otherwise("/pat");
 }]) ;

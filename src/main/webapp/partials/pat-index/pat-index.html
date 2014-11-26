@@ -1,10 +1,94 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<style>
+    .form-width-1px {padding: 1px}
+</style>
+<!--病人查询条件-->
+<div  ng-controller="patIndexCtrl">
+    <div class="row" style="padding-left: 15px">
+    <div class="form-width-1px col-md-2" >
+        <div class="input-group">
+            <span class="input-group-addon">病人ID</span>
+            <input class="form-control" type="text" data-ng-model="patID"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-2" >
+        <div class="input-group">
+            <span class="input-group-addon">姓名</span>
+            <input class="form-control" type="text" data-ng-model="patName"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-2" >
+        <div class="input-group">
+            <span class="input-group-addon">住院号</span>
+            <input class="form-control" type="text" data-ng-model="inpNo"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-2 col">
+        <div class="input-group">
+            <span class="input-group-addon">性别</span>
+            <select class="form-control select2-default" data-ng-model="sex" >
+                <option class="select2-active">男</option>
+                <option >女</option>
+                <option >未知</option>
+                <option >未填</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="input-group">
+            <span class="input-group-addon">出生日期</span>
+            <input type="date" class="form-control" data-ng-model="birthDate"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-1">
+        <button class="btn btn-info">查询</button>
+    </div>
 
-</body>
-</html>
+</div>
+<br/>
+<div class="row" style="padding-left: 15px">
+    <div class="form-width-1px col-md-2">
+        <div class="input-group">
+            <span class="input-group-addon">诊断</span>
+            <input class="form-control" type="text" data-ng-model="diagnosis"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3">
+        <div class="input-group">
+            <span class="input-group-addon">出院日期</span>
+            <input class="form-control" type="date" data-ng-model="dtDischargeStart"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-2">
+        <div class="input-group">
+            <span class="input-group-addon">至</span>
+            <input class="form-control" type="date" data-ng-model="dtDischargeStop"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3">
+        <div class="input-group">
+            <span class="input-group-addon">出院科室</span>
+            <select class="form-control select2-default" data-ng-model="deptDischarge" >
+                <option class="select2-active">26病区骨科</option>
+                <option >27病区骨科</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-1"></div>
+    <div class="form-width-1px col-md-1">
+        <button class="btn btn-info">重置</button>
+    </div>
+</div>
+<!--病人查询结果列表-->
+<div class="panel panel-default panel-primary">
+    <div class="panel-heading"><span class="panel-title">病人查询结果列表</span></div>
+    <div class="panel-body">
+        <div ng-grid="patsFoundGrid" class="gridStyle"  style="height: 300px;width: 100%"></div>
+    </div>
+</div>
+    <div class="panel panel-default panel-primary">
+        <div class="panel-heading"><span class="panel-title">病人历次就诊信息</span></div>
+        <div class="panel-body">
+            <div ng-grid="patsVisitListGrid" class="gridStyle"  style="height: 300px;width: 100%"></div>
+        </div>
+    </div>
+</div>
