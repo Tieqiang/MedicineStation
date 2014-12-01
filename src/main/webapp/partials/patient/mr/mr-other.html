@@ -1,1 +1,372 @@
-手术信息.html
+<style>
+    .form-width-1px {padding: 1px}
+</style>
+
+<div data-ng-controller="mrOtherControl">
+<div class="row" >
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">科主任</span>
+            <input class="form-control" type="text" data-ng-model="director"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">主(副主)任医生</span>
+            <input class="form-control" type="text" data-ng-model="chiefDoctor"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">主治医生</span>
+            <input class="form-control" type="text" data-ng-model="attendingDoctor"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">住院医生</span>
+            <input class="form-control" type="text" data-ng-model="doctorOut"/>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">进修医生</span>
+            <input class="form-control" type="text" data-ng-model="advancedStudyDoctor"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">研究生实习医生</span>
+            <input class="form-control" type="text" data-ng-model="practiceGraDoctor"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">实习医生</span>
+            <input class="form-control" type="text" data-ng-model="practiceDoctor"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">编码员</span>
+            <input class="form-control" type="text" data-ng-model="codeStaff"/>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">病案质量</span>
+            <input class="form-control" type="text" data-ng-model="mrQuality"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">一级护理天数</span>
+            <input class="form-control" type="text" data-ng-model="firstLevelNursDays"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">特级天数</span>
+            <input class="form-control" type="text" data-ng-model="specLevelNursDays"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">责任护士</span>
+            <input class="form-control" type="text" data-ng-model="chargeNurse"/>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">质控医生</span>
+            <input class="form-control" type="text" data-ng-model="controlDoctor"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">二级护理天数</span>
+            <input class="form-control" type="text" data-ng-model="secondLevelNursDays"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">ICU天数</span>
+            <input class="form-control" type="text" data-ng-model="ICUDays"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">随诊标记</span>
+            <input class="form-control" type="text" data-ng-model="followIndicator"/>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">质控护士</span>
+            <input class="form-control" type="text" data-ng-model="controlNurse"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">三级护理天数</span>
+            <input class="form-control" type="text" data-ng-model="thirdLevelNursDays"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">CCU天数</span>
+            <input class="form-control" type="text" data-ng-model="CCUDays"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">示教病例</span>
+            <input class="form-control" type="text" data-ng-model="teachingCategory"/>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">质控日期</span>
+            <input class="form-control" type="text" data-ng-model="dateControlOfQuality"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">血型</span>
+            <input class="form-control" type="text" data-ng-model="bloodType"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">RH血型</span>
+            <input class="form-control" type="text" data-ng-model="RH"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">输血反应</span>
+            <input class="form-control" type="text" data-ng-model="bloodtranReactTimes"/>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="form-width-1px col-md-3" >
+            <div class="checkbox">
+                <label >
+                    <span>手术,检查,治疗,诊断为本院第一例</span>
+                    <input  type="checkbox"  data-ng-model="firstCase"/>
+                </label>
+            </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">尸检</span>
+            <input class="form-control" type="text" data-ng-model="autopsyIndicator"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">病例分型</span>
+            <input class="form-control" type="text" data-ng-model="pathologyType"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">随诊期限</span>
+            <input class="form-control" type="text" data-ng-model="followInterval"/>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="form-width-1px col-md-2" >
+        <div class="input-group">
+            <span class="input-group-addon">1.红细胞</span>
+            <input class="form-control" type="text" data-ng-model="redCell"/>
+            <span class="input-group-addon">单位</span>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-2" >
+        <div class="input-group">
+            <span class="input-group-addon">2.血小板</span>
+            <input class="form-control" type="text" data-ng-model="palet1"/>
+            <span class="input-group-addon">单位</span>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-2" >
+        <div class="input-group">
+            <span class="input-group-addon">3.血浆</span>
+            <input class="form-control" type="text" data-ng-model="plasma"/>
+            <span class="input-group-addon">ml</span>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">4.全血</span>
+            <input class="form-control" type="text" data-ng-model="wholeBlood"/>
+            <span class="input-group-addon">ml</span>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">5.其它</span>
+            <input class="form-control" type="text" data-ng-model="otherBlood"/>
+            <span class="input-group-addon">ml</span>
+        </div>
+    </div>
+</div>
+<hr/>
+
+<div class="row" >
+    <div class="form-width-1px col-md-5" >
+        <div class="input-group">
+            <span class="input-group-addon">离院方式</span>
+            <input class="form-control" type="text" data-ng-model="dischargeDisposition"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-7" >
+        <div class="input-group">
+            <span class="input-group-addon">拟接收医疗机构名称</span>
+            <input class="form-control" type="text" data-ng-model="dischargeDispositionTo"/>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="form-width-1px col-md-5" >
+        <div class="input-group">
+            <span class="input-group-addon">是否有出院31天内再住院计划</span>
+            <input class="form-control" type="text" data-ng-model="hospitalAgainPlan"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-7" >
+        <div class="input-group">
+            <span class="input-group-addon">目的</span>
+            <input class="form-control" type="text" data-ng-model="hospitalAgainPurpose"/>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="form-width-1px col-md-3" >
+        <span>颅脑损伤患者昏迷时间</span>
+    </div>
+    <div class="form-width-1px col-md-4" >
+        <div class="input-group">
+            <span class="input-group-addon">入院前</span>
+            <input class="form-control" type="text" data-ng-model="comaTimeDay"/>
+            <span class="input-group-addon">天</span>
+            <input class="form-control" type="text" data-ng-model="comaTimehour"/>
+            <span class="input-group-addon">小时</span>
+            <input class="form-control" type="text" data-ng-model="comaTimeMin"/>
+            <span class="input-group-addon">分钟</span>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-5" >
+        <div class="input-group">
+            <span class="input-group-addon">入院后</span>
+            <input class="form-control" type="text" data-ng-model="comaTimeHospitalDay"/>
+            <span class="input-group-addon">天</span>
+            <input class="form-control" type="text" data-ng-model="comaTimeHospitalHour"/>
+            <span class="input-group-addon">小时</span>
+            <input class="form-control" type="text" data-ng-model="comaTimeHospitalMin"/>
+            <span class="input-group-addon">分钟</span>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">实施重症监护</span>
+            <input class="form-control" type="text" data-ng-model="intensiveCare"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">监护总时间</span>
+            <input class="form-control" type="text" data-ng-model="intensiveCareTimeDay"/>
+            <span class="input-group-addon">天</span>
+            <input class="form-control" type="text" data-ng-model="intensiveCareTimeHour"/>
+            <span class="input-group-addon">小时</span>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">单病种管理</span>
+            <input class="form-control" type="text" data-ng-model="singleDiseaseMgr"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">抗生素使用</span>
+            <input class="form-control" type="text" data-ng-model="useAnibiotic"/>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" >
+    <div class="form-width-1px col-md-6" >
+        <div class="input-group">
+            <span class="input-group-addon">实施临床路径管理</span>
+            <input class="form-control" type="text" data-ng-model="cliniPathMgr"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">法定传染病</span>
+            <input class="form-control" type="text" data-ng-model="notifiableDiseases"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">细菌培养标本送检</span>
+            <input class="form-control" type="text" data-ng-model="bacterialCulture"/>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" >
+    <div class="form-width-1px col-md-6" >
+        <div class="input-group">
+            <span class="input-group-addon">肿瘤分期</span>
+            <span class="input-group-addon">T</span>
+            <input class="form-control" type="text" data-ng-model="tumourStageT"/>
+            <span class="input-group-addon">N</span>
+            <input class="form-control" type="text" data-ng-model="tumourStageN"/>
+            <span class="input-group-addon">M</span>
+            <input class="form-control" type="text" data-ng-model="tumourStageM"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">实施DRGs管理</span>
+            <input class="form-control" type="text" data-ng-model="drgsMgr"/>
+        </div>
+    </div>
+    <div class="form-width-1px col-md-3" >
+        <div class="input-group">
+            <span class="input-group-addon">新生儿Apgar评分</span>
+            <input class="form-control" type="text" data-ng-model="apgarScore"/>
+        </div>
+    </div>
+</div>
+</div>

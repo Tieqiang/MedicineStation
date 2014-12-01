@@ -1,1 +1,68 @@
-其它信息.html
+<style>
+    .form-width-1px {padding: 1px}
+</style>
+<div data-ng-controller="mrDiagnosisControl">
+    <div class="row ">
+        <div ng-grid="diagnosisGrid" class="gridStyle" style="height: 300px;width: 100%"></div>
+    </div>
+    <hr/>
+    <div class="row" >
+        <div class="form-width-1px col-md-2" >
+            <div class="input-group">
+                <span class="input-group-addon">病理切片号</span>
+                <input class="form-control" type="text" data-ng-model="pathologySliceUpNo"/>
+            </div>
+        </div>
+        <div class="form-width-1px col-md-2" >
+            <div class="input-group">
+                <span class="input-group-addon">X光片号</span>
+                <input class="form-control" type="text" data-ng-model="xNo"/>
+            </div>
+        </div>
+        <div class="form-width-1px col-md-2" >
+            <div class="input-group">
+                <span class="input-group-addon">抢救次数</span>
+                <input class="form-control" type="text" data-ng-model="emerTreatTimes"/>
+            </div>
+        </div>
+        <div class="form-width-1px col-md-2" >
+            <div class="input-group">
+                <span class="input-group-addon">抢救次数</span>
+                <input class="form-control" type="text" data-ng-model="escEmerTimes"/>
+            </div>
+        </div>
+        <div class="form-width-1px col-md-4" >
+            <div class="input-group">
+                <span class="input-group-addon">入院后确认日期</span>
+                <input class="form-control" type="date" data-ng-model="diagnosisDate"/>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="form-width-1px col-md-2" >
+            <div class="input-group">
+                <span class="input-group-addon">HBsAg</span>
+                <input class="form-control" type="text" data-ng-model="HBsAg"/>
+            </div>
+        </div>
+        <div class="form-width-1px col-md-2" >
+            <div class="input-group">
+                <span class="input-group-addon">HCV-Ab</span>
+                <input class="form-control" type="text" data-ng-model="HCVAb"/>
+            </div>
+        </div>
+        <div class="form-width-1px col-md-2" >
+            <div class="input-group">
+                <span class="input-group-addon">HIV-Ab</span>
+                <input class="form-control" type="text" data-ng-model="HIVAb"/>
+            </div>
+        </div>
+        <div class="form-width-1px col-md-6" >
+            <div class="input-group">
+                <span class="input-group-addon">过敏药物</span>
+                <input class="form-control" type="text" data-ng-model="dAlergyDrugs"/>
+            </div>
+        </div>
+    </div>
+</div>
