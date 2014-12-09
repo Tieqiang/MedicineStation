@@ -2,7 +2,7 @@
  * Created by heren on 2014/11/15.
  */
 
-var mainApp = angular.module("mainApp",["ui.router","ngGrid"]) ;
+var mainApp = angular.module("mainApp",["ui.router","ngGrid","ui.select2"]) ;
 
 mainApp.config(["$stateProvider","$urlRouterProvider",function($stateProvider,$urlRouterProvider){
     $stateProvider.state("main",{

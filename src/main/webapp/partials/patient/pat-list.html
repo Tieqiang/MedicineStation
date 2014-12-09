@@ -20,12 +20,10 @@
     <div class="pane-body">
         <div class="row" style="margin-top: 10px;">
             <div class="col-md-12">
-                <select class="form-control">
-                    <option>科室1</option>
-                    <option>科室2</option>
-                    <option>科室3</option>
-                    <option>科室4</option>
+                <select ui-select2 ng-model="selectedDept"   class="form-control select2-default" placehoder="请选择科室">
+                    <option ng-repeat="dept in deptDicts" value="{{dept.deptCode}}" >{{dept.deptName}}</option>
                 </select>
+                {{selectedDept}}
             </div>
         </div>
         <div class="row">

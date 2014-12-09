@@ -67,8 +67,9 @@
     <div class="form-width-1px col-md-3">
         <div class="input-group">
             <span class="input-group-addon">出院科室</span>
-            <select class="form-control select2-default" data-ng-model="deptDischarge" >
-                <option class="select2-active">26病区骨科</option>
+            <select ui-select2  class="form-control select2-default" data-ng-model="deptDischarge"  data-placeholder="请选择病区" >
+                <option></option>
+                <option>26病区骨科</option>
                 <option >27病区骨科</option>
             </select>
         </div>

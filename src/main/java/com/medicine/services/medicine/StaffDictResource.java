@@ -37,8 +37,8 @@ public class StaffDictResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public StaffDict addStaffDict(StaffDictVO staffDictVO){
         StaffDict staffDict = new StaffDict();
-        staffDict.setEmpNo(staffDictVO.getEmp());
-        staffDict.setName(staffDictVO.getName());
+        staffDict.setEmpNo(staffDictVO.getName());
+        staffDict.setName(staffDictVO.getEmpNo());
         return staffDict;
     }
 }

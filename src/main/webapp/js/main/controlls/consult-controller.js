@@ -23,6 +23,7 @@ var consultCtrl = mainApp.controller("consultCtrl", ["$scope", function ($scope)
 
 
 
+
     $scope.patListOptions={
         data:'consultes',
         selectedItems:$scope.mySelectPat,

@@ -1,8 +1,8 @@
 package com.medicine.facade;
 
 import com.google.common.base.Optional;
+import com.medicine.util.AliasToBeanResultTransformer;
 import org.hibernate.SQLQuery;
-import org.hibernate.transform.AliasToBeanResultTransformer;
 
 import javax.inject.Inject;
 import javax.persistence.*;
@@ -430,6 +430,9 @@ public class BaseFacade {
         return query.getResultList();
     }
 
+
+
+
     public class JpqlQueryBuilder {
 
         private StringBuilder jpql;
@@ -538,6 +541,75 @@ public class BaseFacade {
         return typedQuery;
     }
 
+
+    /**
+     * 根据传入的SQL和对应的VO类型获取VO的列表
+     * @param type
+     * @param sql
+     * @param <T>
+     * @return
+     */
+    public <T> List<T> findNativeList(Class<T> type,String sql){
+        if(!sql.isEmpty()) {
+
+            Query query = this.entityManager.createNativeQuery(sql);
+            query.unwrap(SQLQuery.class).setResultTransformer(new AliasToBeanResultTransformer(type));
+            return query.getResultList();
+        }else {
+            return new ArrayList<T>() ;
+        }
+    }
+
+
+    /***
+     * 根据完整的类名获取信息
+     * @param className
+     * @param sql
+     * @param <T>
+     * @return
+     */
+    public <T> List<T> findNativeList(String className,String sql){
+        try {
+            Class type = Class.forName(className);
+            return this.findNativeList(type,sql) ;
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            return null ;
+        }
+    }
+
+    /***
+     * 添加包名和类名获取
+     * @param packageName
+     * @param className
+     * @param sql
+     * @param <T>
+     * @return
+     */
+    public <T> List<T> findNativeList(String packageName,String className,String sql ) {
+        String classFullName = packageName+"."+className ;
+        return this.findNativeList(classFullName,sql) ;
+    }
+
+    /***
+     * 获取带参数的SQL对象
+     * @param packageName
+     * @param className
+     * @param sql
+     * @param paras
+     * @param <T>
+     * @return
+     */
+    public <T> List<T> findNativeList(String packageName,String className,String sql ,Object[] paras){
+
+        if (paras !=null){
+            String fullSql = String.format(sql,paras) ;
+            return this.findNativeList(packageName,className,fullSql) ;
+        }else{
+            return this.findNativeList(packageName,className,sql) ;
+        }
+
+    }
 
     protected int update(String queryStr, Object... parameters) {
         try {

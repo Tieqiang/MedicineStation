@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="assets/bootstrap-3.0.0/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="assets/css/ng-grid.css"/>
     <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
-
+    <link rel="stylesheet" href="assets/css/select2.css"/>
+    <link rel="stylesheet" href="assets/css/select2-ui.css"/>
+    <link rel="stylesheet" href="assets/css/select2-bootstrap.css"/>
     <link rel="stylesheet" href="css/main/phar-advice/pat-advice.css"/>
 </head>
 <body>
 <div ui-view="nav" class="container" class="row">导航栏</div>
-<div ui-view="main" class="container" class="row">主题区域</div>
+<div ui-view="main" class="container" class="row" ng-controller="minCtrl">主题区域</div>
 
 <!--加载各种js框架-->
 
@@ -23,9 +25,13 @@
 <script src="assets/js/ng-grid.js"></script>
 <script src="assets/js/angular-ui-router.js"></script>
 <script src="assets/bootstrap-3.0.0/js/bootstrap.js"></script>
-
+<script src="assets/js/select2.js"></script>
+<script src="assets/js/ui-select2.js"></script>
+<script src="assets/js/select2_locale_zh-CN.js"></script>
+<script src="assets/js/utils.js"></script>
 <!--加载业务ＪＳ-->
 <script src="js/main/main-app.js"></script>
+<script src="js/main/controlls/main-controller.js"></script>
 <script src="js/main/controlls/consult-controller.js"></script>
 <script src="js/main/models/consult-model.js"></script>
 <script src="js/main/models/patIndex-model.js"></script>

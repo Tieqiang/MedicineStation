@@ -2,20 +2,42 @@
  * Created by heren on 2014/11/21.
  */
 
-var patListCtrl = mainApp.controller("patListCtrl",["$scope",function($scope){
+var patListCtrl = mainApp.controller("patListCtrl",["$scope","$http",function($scope,$http){
 
     var pat=function(){
         name:""
     }
-    $scope.pats = [] ;
-    for(var i =0 ;i<10;i++){
-        var p = new pat();
-        p.name="张珊"+i ;
-        $scope.pats.push(p);
+
+    $scope.deptDicts=[] ;
+    $scope.patients=[] ;
+
+    $scope.inpDept = {} ;
+
+    /**
+     * 获取科室
+     */
+    $scope.getInpDept=function(){
+        $http.get(Path.getUri("api/comm/1")).success(function(data){
+            $scope.deptDicts=data ;
+        });
+    }
+    $scope.getInpDept() ;
+    $scope.selectedDept = "" ;
+    $scope.getPatientListByDeptCode = function(dept){
+
+        $http.get(Path.getUri("api/comm/2")+"?param="+dept).success(function(data){
+            $scope.patients=data ;
+            console.log(data) ;
+        })
     }
 
+    $scope.$watch("selectedDept",function(newValue,oldValue){
+        $scope.getPatientListByDeptCode(newValue) ;
+    }) ;
+
+
     $scope.patListGridOptions={
-        data:'pats',
+        data:'patients',
         selectedItems:$scope.mySelectPat,
         multiSelect: false,
         showFooter:true,
@@ -24,7 +46,9 @@ var patListCtrl = mainApp.controller("patListCtrl",["$scope",function($scope){
         },
         afterSelectionChange:function(item,ev){
             if(item.selected){
-                console.log(item.entity.patId) ;
+                console.log(item.entity.patientId) ;
+                $scope.$broadcast("patClick",item.entity.patientId) ;
+                $scope.$emit("patClickEmt",item.entity) ;
             }
         }
         ,
