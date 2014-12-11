@@ -1,18 +1,3 @@
-<!--<div class="row">-->
-<!--<input type="text" class="input-sm"/>-->
-<!--</div>-->
-<!--<div class="row">-->
-<!--<div class="col-md-6">-->
-<!--<input type="radio" class="radio" ng-model="deptRadio" checked="false">科室-->
-<!--<input type="radio" class="radio" ng-model="patRadio">病人-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="row">-->
-<!--<div class="col-md-6">-->
-<!--<input type="radio" class="raido" ng-model="inpRadio" checked="false">在院-->
-<!--<input type="radio" class="radio" ng-model="outpRadio">出院-->
-<!--</div>-->
-<!--</div>-->
 <div class="panel panel-default panel-primary" ng-controller="patListCtrl">
     <div class="panel-heading">
         <span>病人列表</span>
@@ -20,25 +5,31 @@
     <div class="pane-body">
         <div class="row" style="margin-top: 10px;">
             <div class="col-md-12">
-                <select ui-select2 ng-model="selectedDept"   class="form-control select2-default" placehoder="请选择科室">
-                    <option ng-repeat="dept in deptDicts" value="{{dept.deptCode}}" >{{dept.deptName}}</option>
+                <select ui-select2 ng-model="selectedDept" class="form-control select2-default" placehoder="请选择科室">
+                    <option ng-repeat="dept in deptDicts" value="{{dept.deptCode}}">{{dept.deptName}}</option>
                 </select>
-                {{selectedDept}}
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12" >
-                <input type="radio" class="radio-inline">科室
-                <input type="radio" class="radio-inline">病人ID
-            </div>
-        </div>
+
         <div class="row">
             <div class="col-md-12">
-                <input type="radio" class="radio-inline">在院
-                <input type="radio" class="radio-inline">出院
+                <label class="radio-inline">
+                    <input type="radio" name="filterType" value="dept"/>科室
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="filterType" value="patid"/>ID号
+                </label>
+            </div>
+            <div class="col-md-12">
+                <label class="radio-inline">
+                    <input type="radio" name="filterType" value="out"/>出院
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="filterType" value="inp"/>在院
+                </label>
             </div>
         </div>
-        <div style="height: 300px;" ng-grid="patListGridOptions">
+        <div style="height: 500px;" ng-grid="patListGridOptions">
 
         </div>
     </div>

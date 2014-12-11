@@ -1,10 +1,13 @@
-<div class="container-fluid">
-        <!--<div class="tabbable tabs-left">-->
-        <ul class="nav nav-tabs nav-stacked  " role="tablist" id="mrTab">
+
+<div class="row">
+    <div class="col-md-2 clearfix">
+        <ul class="nav nav-tabs nav-stacked nav-pills  " role="tablist" id="mrTab">
             <li role="presentation" class="active"><a href="#diagnosis" data-toggle="tab">诊断信息</a></li>
             <li role="presentation"><a href="#operation" data-toggle="tab">手术信息</a></li>
             <li role="presentation"><a href="#other" data-toggle="tab">其它信息</a></li>
         </ul>
+    </div>
+    <div class="col-md-10">
         <div class="tab-content">
             <section class="tab-pane fade in active" id="diagnosis" ng-include src="'partials/patient/mr/mr-diagnosis.html'">
             </section>
@@ -12,7 +15,7 @@
             </section>
             <section class="tab-pane fade" id="other" ng-include src="'partials/patient/mr/mr-other.html'" ></section>
         </div>
-        <!--</div>-->
+    </div>
 </div>
 
 

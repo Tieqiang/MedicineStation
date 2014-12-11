@@ -1,5 +1,6 @@
 .ngGrid {
-  background-color: #fdfdfd;
+  /*background-color: #fdfdfd;*/
+    background-color: white;
 }
 .ngGrid input[type="checkbox"] {
   margin: 0;
