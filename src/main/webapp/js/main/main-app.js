@@ -62,3 +62,15 @@ mainApp.config(["$stateProvider","$urlRouterProvider",function($stateProvider,$u
     }) ;
     $urlRouterProvider.otherwise("/pat");
 }]) ;
+
+mainApp.filter("indecatorFilter",function(){
+    return function(item){
+        if(item=="0"){
+            return "临时";
+        }else if(item==1){
+            return "长期";
+        }else{
+            return "未定义" ;
+        }
+    }
+})

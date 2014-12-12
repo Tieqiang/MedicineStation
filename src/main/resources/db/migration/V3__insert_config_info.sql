@@ -2,7 +2,7 @@
 -- insert into config_info values('1','com.medicine.models.vo','DeptDictVo','') ;
 -- select a.*
 --   from dept_dict a, dept_clinic_attr_dict b, dept_oi_attr_dict c
---  where a.clinic_attr = b.clinic_attr_code
+-- where a.clinic_attr = b.clinic_attr_code
 --    and c.oi_attr_code = a.outp_or_inp
 --    and b.clinic_attr_name = '临床'
 --    and c.oi_attr_name = '住院'
@@ -12,5 +12,30 @@
 -- insert into config_info values('1','com.medicine.models.vo','DeptDictVo','') ;
 -- select a.patient_id, a.name, b.visit_id, a.inp_no, a.sex,a.id_no,a.identity
 --   from pat_master_index a, pat_visit b
---  where a.patient_id = b.patient_id
+-- where a.patient_id = b.patient_id
 --    and b.dept_admission_to = '%s'
+
+--医嘱展示VO
+-- insert into config_info values('3','com.medicine.models.vo','OrdersVO','')
+-- select rownum id,
+--        a.repeat_indicator,
+--        b.class_name,
+--        a.start_date_time,
+--        a.order_text,
+--        a.dosage,
+--        a.dosage_units,
+--        a.administration,
+--        a.frequency,
+--        a.perform_schedule,
+--        a.stop_date_time,
+--        a.freq_detail,
+--        a.billing_attr,
+--        a.drug_billing_attr,
+--        a.doctor,
+--        a.stop_doctor,
+--        a.nurse,
+--        a.DURATION,
+--        a.duration_units,
+--        a.processing_date_time
+--   from orders a, clinic_item_class_dict b
+--  where a.order_class = b.class_code and patient_id='%s' and visit_id='%s'

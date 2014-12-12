@@ -5,8 +5,8 @@
     <div class="pane-body">
         <div class="row" style="margin-top: 10px;">
             <div class="col-md-12">
-                <select ui-select2 ng-model="selectedDept" class="form-control select2-default" placehoder="请选择科室">
-                    <option ng-repeat="dept in deptDicts" value="{{dept.deptCode}}">{{dept.deptName}}</option>
+                <select ui-select2  ng-model="selectedDept"  class="form-control select2-default" placehoder="请选择科室">
+                    <option ng-repeat="dept in deptDicts"   value="{{dept.deptCode}}" code="{{dept.inputCode}}">{{dept.deptName}}</option>
                 </select>
             </div>
         </div>

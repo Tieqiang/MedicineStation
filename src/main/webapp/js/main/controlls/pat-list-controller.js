@@ -54,6 +54,8 @@ var patListCtrl = mainApp.controller("patListCtrl",["$scope","$http",function($s
         ,
         columnDefs:[{
             field:'name',displayName:'姓名'
+        },{
+            field:'visitId',displayName:'住院次数'
         }]
 
     }

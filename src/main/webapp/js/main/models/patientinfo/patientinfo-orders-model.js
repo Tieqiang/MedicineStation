@@ -3,13 +3,13 @@
  */
 var order = function(){
     //行号
-    this.rowNo = "";
+    this.id = "";
     //长临标志
-    this.repeateTemp = "";
+    this.repeatIndicator = "";
     //医嘱类别
-    this.orderClass = "";
+    this.className = "";
     //医嘱下达日期
-    this.startOrderTime = "";
+    this.startDateTime = "";
     //医嘱内容
     this.orderText = "";
     //剂量
@@ -27,20 +27,20 @@ var order = function(){
     //医生说明
     this.freqDetail = "";
     //计价属性
-    this.billingAtrr = "";
+    this.billingAttr = "";
     //摆药
-    this.drugBillingAttrBaiyao = "";
+    this.drugBillingAttr = "";
     //下达医生
-    this.startOrderDoctor = "";
+    this.doctor = "";
     //停止医生
-    this.stopOrderDoctor = "";
+    this.stopDoctor = "";
     //护士
     this.nurse = "";
     //持续时间
-    this.durations = "";
+    this.duration = "";
     //持续时间单位
-    this.durationUnit = "";
+    this.durationUnits = "";
     //转抄时间
-    this.processingTime = "";
+    this.processingDateTime = "";
 
 }
